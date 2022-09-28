@@ -25,9 +25,13 @@ for i in range(3,13):
 #create URLs using the hashtags collected
 urls=[]
 for i in trending_topic_content:
-	url='https://twitter.com/search?q=%23'+i+'&src=trend_click'
-	url = url.replace(" ", "%20")
-	urls.append(url)
+    if i.startswith("#"):
+        i= i[1:]
+        url='https://twitter.com/search?q=%23'+i+'&src=trend_click'
+    else:
+        url = 'https://twitter.com/search?q=' + i + '&src=trend_click'
+    url = url.replace(" ", "%20")
+    urls.append(url)
 
 #create a dictionary that has both the Hashtag and the URLs
 dic={'HashTag':trending_topic_content,'URL':urls}
