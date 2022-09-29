@@ -1,13 +1,12 @@
 #importing the required modules
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+import chromedriver_binary
 import time
 import pandas as pd
 
-#creating object of chromedriver
-cd='chromedriver'
-
 #open google chrome browser
-browser=webdriver.Chrome(cd)
+browser=webdriver.Chrome()
 
 #open the trending page of Twitter
 browser.get('https://twitter.com/explore/tabs/trending')
